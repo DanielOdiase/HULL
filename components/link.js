@@ -45,7 +45,7 @@ const Link = ({ link, children, ...rest }) => {
     const isShop = link.page?.isShop
 
     return (
-      <NextLink
+      (<NextLink
         href={
           isHome || isShop
             ? `/${isShop ? 'shop' : ''}`
@@ -54,28 +54,25 @@ const Link = ({ link, children, ...rest }) => {
             : `/${isDynamic ? `${isDynamic}/` : ''}${link.page?.slug}`
         }
         scroll={false}
-      >
-        <a
-          className={
-            link.isButton
-              ? cx('btn', link.styles?.style, {
-                  'is-large': link.styles?.isLarge,
-                  'is-block': link.styles?.isBlock,
-                })
-              : null
-          }
-          {...rest}
-        >
-          {link.title || children}
+        className={
+          link.isButton
+            ? cx('btn', link.styles?.style, {
+                'is-large': link.styles?.isLarge,
+                'is-block': link.styles?.isBlock,
+              })
+            : null
+        }
+        {...rest}>
 
-          {isCollection && (
-            <span aria-hidden="true" className="collection-count">
-              {collectionCount}
-            </span>
-          )}
-        </a>
-      </NextLink>
-    )
+        {link.title || children}
+        {isCollection && (
+          <span aria-hidden="true" className="collection-count">
+            {collectionCount}
+          </span>
+        )}
+
+      </NextLink>)
+    );
   }
 }
 

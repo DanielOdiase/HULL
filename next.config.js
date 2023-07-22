@@ -1,9 +1,10 @@
-const sanityClient = require('@sanity/client')
-const client = sanityClient({
+
+const { createClient } = require('next-sanity')
+const client = createClient({
   dataset: process.env.NEXT_PUBLIC_SANITY_PROJECT_DATASET,
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   useCdn: process.env.NODE_ENV === 'production',
-  apiVersion: '2022-08-30',
+  apiVersion: '2022-11-15',
 })
 
 // see breakdown of code bloat

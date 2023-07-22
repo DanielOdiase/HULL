@@ -150,10 +150,11 @@ const ProductCard = React.forwardRef(
                   (product.surfaceOption ? `?variant=${activeVariant.id}` : '')
                 }`}
                 scroll={false}
-              >
-                <a className="product-card--link" onClick={onClick}>
-                  {product.title}
-                </a>
+                className="product-card--link"
+                onClick={onClick}>
+
+                {product.title}
+
               </Link>
             </h2>
 
@@ -193,7 +194,7 @@ const ProductCard = React.forwardRef(
           )}
         </div>
       </m.div>
-    )
+    );
   }
 )
 

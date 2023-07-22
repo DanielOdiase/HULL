@@ -144,7 +144,7 @@ const Icon = (props) => {
       </title>
       {getIcon(name, color)}
     </svg>
-  )
+  );
 }
 
 export default Icon

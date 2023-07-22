@@ -48,13 +48,11 @@ function CartItem({ item }) {
               <Link
                 href={`/products/${item.product.slug}?variant=${item.id}`}
                 scroll={false}
-              >
-                <a
-                  onClick={() => toggleCart(false)}
-                  className="cart-item--link"
-                >
-                  {item.product.title}
-                </a>
+                onClick={() => toggleCart(false)}
+                className="cart-item--link">
+
+                {item.product.title}
+
               </Link>
             </h2>
           </div>
@@ -79,7 +77,7 @@ function CartItem({ item }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default CartItem
